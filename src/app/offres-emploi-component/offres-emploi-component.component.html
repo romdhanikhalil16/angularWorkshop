@@ -1,0 +1,12 @@
+<div *ngFor="let emploi of listEmploi">
+  <span>reference : {{ emploi.reference }} </span>
+  <span>titre : {{ emploi.titre }} </span>
+  <span>entreprise :{{ emploi.entreprise }} </span>
+  <span>etat :{{ emploi.etat }} </span>
+  <input type="button" value="postuler" [disabled]="!emploi.etat" />
+</div>
+<input type="submit" value="Bilan" (click)="calculerNombreOffreNonCloture()" />
+{{ nbOffreNonCloture }}
+<br />
+
+<input type="text" (input)="chercherEmploiParEntreprise($event)" />

@@ -1,0 +1,21 @@
+<h1>{{ titre }}</h1>
+
+<input type="text" [value]="somme" />
+
+<div *ngFor="let e of listArticles">
+  <div *ngIf="e.categorie != 'travail'">
+    <div
+      [ngStyle]="{
+        'background-color': e.categorie == 'Education' ? 'blue' : ''
+      }"
+    >
+      <div class="card-body">
+        <div>{{ e.titre }}</div>
+        <div>{{ e.auteur }}</div>
+        <div>{{ e.date }}</div>
+        <div>{{ e.contenu }}</div>
+        <div>{{ e.categorie }}</div>
+      </div>
+    </div>
+  </div>
+</div>
